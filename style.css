@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff-primary:'Roboto', sans-serif;
+    --text-color: #E1E1E6;
+
+    --primary-color: #092D38; 
+    --backgroud-color: #000000;
+    --button-color: #065E7C;
+    --searchBar-color: #06181C;
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--backgroud-color);
+}
+
+body * {
+    font-family:var(--ff-primary);
+}
+
+
+
+#app {
+    padding: 2rem;
+    max-width: 80vw;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 2.5rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.search input {
+    height: 4.8rem;
+    width: 46.2rem;
+    border: none;
+    background-color: #06181C;
+    padding: 0 1.5rem;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.favoriteButton {
+    background-color: #065E7C;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #FFFFFF;
+    height: 4.8rem;
+    width: 17rem;
+    border: none;
+    padding: 0 1rem;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.favoriteButton svg {
+    fill: currentColor; /* Isso faz com que o ícone SVG herde a cor atual do texto do botão. */
+    transition: fill 0.1s;
+}
+
+.favoriteButton:hover {
+    background-color: #FFFFFF;
+    color: var(--primary-color);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Faz o header da table juntar as colunas com cores*/
+
+    box-shadow: 0 1rem 2rem -1rem rgba(32, 32, 32, 0.945);
+}
+
+table * {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+table th {
+    background: var(--primary-color);
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+    padding: 1.5rem;
+}
+
+table th:first-child {
+    border-top-left-radius: .4rem;
+}
+
+table th:last-child {
+    border-top-right-radius: .4rem;
+}
+
+table tr:nth-child(odd) {/*Pega todas as colunas pares e coloca um backgroud...*/
+    background: #06181C;
+}
+
+table tr:nth-child(odd) { /*Pega todas as colunas impares e coloca um backgroud...*/
+    
+    background: #06161B;
+}
+
+table td {
+    padding: 1.5rem;
+    text-align: left;
+    height: 10.4rem;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+td.user img{
+    width: 5rem;
+    height: 5rem;
+    
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+td.user span{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+td .remove {
+    background: none;
+    border: none;
+
+    font-size: 20px;
+    color: #F75A68;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.repositories, .followers {
+    font-weight: bold;
+    font-size: 20px;
+}
+
