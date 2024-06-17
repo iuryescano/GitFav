@@ -110,15 +110,15 @@ table th {
     font-size: 20px;
     text-align: left;
     font-weight: bold;
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 table th:first-child {
-    border-top-left-radius: .4rem;
+    border-top-left-radius: 12px;
 }
 
 table th:last-child {
-    border-top-right-radius: .4rem;
+    border-top-right-radius: 12px;
 }
 
 table tr:nth-child(odd) {/*Pega todas as colunas pares e coloca um backgroud...*/
@@ -179,3 +179,13 @@ td .remove {
     font-size: 20px;
 }
 
+.no-data {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.hidden {
+    display: none;
+}
