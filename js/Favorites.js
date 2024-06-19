@@ -8,7 +8,7 @@ export class Favorites {
 
     load() {
         this.entries  = JSON.parse(localStorage.getItem('@github-favorites:')) || []
-        this.validTable()
+        
     }
 
     save() {
@@ -52,15 +52,14 @@ export class Favorites {
 
 
 }
-``
 
 //classe que vai criar a visualizacao e eventos do HTML
 export class FavoritesView extends Favorites {
     constructor(root) {
         super(root) //essa linha e a que chama o construtor de cima
 
+        this.noDataRow = this.root.querySelector('table tfoot .no-data')
         this.tbody = this.root.querySelector('table tbody')
-
         this.update()
         this.onadd()
     }
@@ -101,7 +100,7 @@ export class FavoritesView extends Favorites {
 
             this.tbody.append(row)
         })
-        
+        this.toggleNoDataRow()
     }
 
     createRoW(){
@@ -135,15 +134,11 @@ export class FavoritesView extends Favorites {
         })
     }
 
-    validTable(){
-        if (!this.entries.lenght){
-            var validData = document.getElementById('message')
-            validData.classList.remove('hidden') 
-            console.log(this.entries)
-        
+    toggleNoDataRow(){
+        if (this.entries.length === 0) {
+            this.noDataRow.classList.remove('hidden')
         } else {
-            console.log('Teste')
-            validData.classList.add('hidden') 
+            this.noDataRow.classList.add('hidden')
         }
     }
 }
